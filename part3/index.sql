@@ -1,0 +1,8 @@
+CREATE UNIQUE INDEX CLIENT_NAME_INDEX
+ON cs464_clients (name);
+
+CREATE INDEX CLIENT_ID_TRANS
+ON cs464_transactions (client_id);
+
+CREATE INDEX EMPLOYEE_ID_UPDATE
+ON cs464_updates (employee_id);

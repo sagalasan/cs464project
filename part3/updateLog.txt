@@ -1,0 +1,164 @@
+mysql> source refresh.sql
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.12 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.08 sec)
+
+Query OK, 0 rows affected (0.07 sec)
+
+Query OK, 0 rows affected (0.08 sec)
+
+Query OK, 0 rows affected (0.07 sec)
+
+Query OK, 0 rows affected (0.13 sec)
+
+Query OK, 0 rows affected (0.16 sec)
+
+Query OK, 0 rows affected (0.11 sec)
+
+Query OK, 47 rows affected (0.04 sec)
+Records: 47  Deleted: 0  Skipped: 0  Warnings: 0
+
+Query OK, 100 rows affected (0.05 sec)
+Records: 100  Deleted: 0  Skipped: 0  Warnings: 0
+
+Query OK, 7 rows affected (0.05 sec)
+Records: 7  Deleted: 0  Skipped: 0  Warnings: 0
+
+Query OK, 2 rows affected (0.05 sec)
+Records: 2  Deleted: 0  Skipped: 0  Warnings: 0
+
+Query OK, 280280 rows affected (20.19 sec)
+Records: 280280  Deleted: 0  Skipped: 0  Warnings: 0
+
+Query OK, 808 rows affected (0.06 sec)
+Records: 808  Deleted: 0  Skipped: 0  Warnings: 0
+
+Query OK, 7 rows affected (0.04 sec)
+Records: 7  Deleted: 0  Skipped: 0  Warnings: 0
+
+mysql> UPDATE cs464_clients 
+    -> SET address = 'P.O. Box 217, 8986 Semper Av.'
+    -> WHERE name = 'Semper Company';
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE cs464_items
+    -> SET description = '2 x 6 Framing Stud'
+    -> WHERE item_id = '10001';
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> DELETE FROM cs464_updates WHERE date > '2015-12-23 00:00:00';
+Query OK, 16 rows affected (0.03 sec)
+
+mysql> DELETE FROM cs464_transactions WHERE date > '2015-12-25 00:00:00' and date <= '2015-12-25 23:59:59';
+Query OK, 1078 rows affected (0.20 sec)
+
+mysql> INSERT INTO cs464_updates
+    -> VALUES ('10004', '10034', '2015-12-31 16:28:49', '2');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO cs464_transactions
+    -> VALUES ('10002', '10013', '10044', '2015-12-31 16:57:54', '54', '23.81', 'sell');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> CREATE UNIQUE INDEX CLIENT_NAME_INDEX
+    -> ON cs464_clients (name);
+ERROR 1062 (23000): Duplicate entry 'Mi Inc.' for key 'CLIENT_NAME_INDEX'
+mysql> 
+mysql> CREATE INDEX CLIENT_ID_TRANS
+    -> ON cs464_transactions (client_id);
+Query OK, 0 rows affected (1.35 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> 
+mysql> CREATE INDEX EMPLOYEE_ID_UPDATE
+    -> ON cs464_updates (employee_id);
+Query OK, 0 rows affected (0.28 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> source refresh.sql
+Database changed
+Query OK, 0 rows affected (0.06 sec)
+
+Query OK, 0 rows affected (0.09 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.08 sec)
+
+Query OK, 0 rows affected (0.08 sec)
+
+Query OK, 0 rows affected (0.09 sec)
+
+Query OK, 0 rows affected (0.07 sec)
+
+Query OK, 0 rows affected (0.12 sec)
+
+Query OK, 0 rows affected (0.16 sec)
+
+Query OK, 0 rows affected (0.13 sec)
+
+Query OK, 47 rows affected (0.04 sec)
+Records: 47  Deleted: 0  Skipped: 0  Warnings: 0
+
+Query OK, 100 rows affected (0.04 sec)
+Records: 100  Deleted: 0  Skipped: 0  Warnings: 0
+
+Query OK, 7 rows affected (0.05 sec)
+Records: 7  Deleted: 0  Skipped: 0  Warnings: 0
+
+Query OK, 2 rows affected (0.04 sec)
+Records: 2  Deleted: 0  Skipped: 0  Warnings: 0
+
+Query OK, 280280 rows affected (20.40 sec)
+Records: 280280  Deleted: 0  Skipped: 0  Warnings: 0
+
+Query OK, 808 rows affected (0.06 sec)
+Records: 808  Deleted: 0  Skipped: 0  Warnings: 0
+
+Query OK, 7 rows affected (0.04 sec)
+Records: 7  Deleted: 0  Skipped: 0  Warnings: 0
+
+mysql> CREATE UNIQUE INDEX CLIENT_NAME_INDEX
+    -> ON cs464_clients (name);
+Query OK, 0 rows affected (0.15 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> 
+mysql> CREATE INDEX CLIENT_ID_TRANS
+    -> ON cs464_transactions (client_id);
+Query OK, 0 rows affected (2.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> 
+mysql> CREATE INDEX EMPLOYEE_ID_UPDATE
+    -> ON cs464_updates (employee_id);
+Query OK, 0 rows affected (0.23 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> tee ./queryLog.txt

@@ -1,0 +1,76 @@
+mysql> source createTables.sql
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+mysql> use sagalasan;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> source createTables.sql
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+Query OK, 0 rows affected (0.07 sec)
+
+Query OK, 0 rows affected (0.08 sec)
+
+Query OK, 0 rows affected (0.07 sec)
+
+Query OK, 0 rows affected (0.08 sec)
+
+Query OK, 0 rows affected (0.12 sec)
+
+Query OK, 0 rows affected (0.17 sec)
+
+Query OK, 0 rows affected (0.13 sec)
+
+mysql> show tables;
++--------------------------+
+| Tables_in_sagalasan      |
++--------------------------+
+| cs464_categories         |
+| cs464_clients            |
+| cs464_employees          |
+| cs464_groups             |
+| cs464_items              |
+| cs464_transactions       |
+| cs464_updates            |
+| employees                |
+| gd_cities                |
+| gd_configuration_history |
+| gd_configurations        |
+| gd_countries             |
+| gd_first_names           |
+| gd_last_names            |
+| gd_regions               |
+| gd_sessions              |
+| gd_settings              |
+| gd_user_accounts         |
+| p_employees              |
++--------------------------+
+19 rows in set (0.00 sec)
+
+mysql> \q

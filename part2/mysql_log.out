@@ -1,0 +1,110 @@
+mysql> show tables;
+ERROR 1046 (3D000): No database selected
+mysql> use sagalasan;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables
+    -> ;
++--------------------------+
+| Tables_in_sagalasan      |
++--------------------------+
+| employees                |
+| gd_cities                |
+| gd_configuration_history |
+| gd_configurations        |
+| gd_countries             |
+| gd_first_names           |
+| gd_last_names            |
+| gd_regions               |
+| gd_sessions              |
+| gd_settings              |
+| gd_user_accounts         |
++--------------------------+
+11 rows in set (0.00 sec)
+
+mysql> \q
+mysql> source inserData.sql
+ERROR: 
+Failed to open file 'inserData.sql', error: 2
+mysql> 
+mysql> source ./inserData.sql
+ERROR: 
+Failed to open file './inserData.sql', error: 2
+mysql> source inserData.sql;
+ERROR: 
+Failed to open file 'inserData.sql', error: 2
+mysql> source inserData.sql;
+ERROR: 
+Failed to open file 'inserData.sql', error: 2
+mysql> ls
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ls' at line 1
+mysql> \q
+mysql> source insertData.sql
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''p_employees'' at line 1
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''p_employees' 
+(
+employee_id int PRIMARY KEY,
+first_name varchar(20),
+last_name ' at line 1
+mysql> source insertData.sql
+ERROR 1046 (3D000): No database selected
+ERROR 1046 (3D000): No database selected
+mysql> use sagalasan
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> source insertData.sql
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> show tables
+    -> ;
++--------------------------+
+| Tables_in_sagalasan      |
++--------------------------+
+| employees                |
+| gd_cities                |
+| gd_configuration_history |
+| gd_configurations        |
+| gd_countries             |
+| gd_first_names           |
+| gd_last_names            |
+| gd_regions               |
+| gd_sessions              |
+| gd_settings              |
+| gd_user_accounts         |
+| p_employees              |
++--------------------------+
+12 rows in set (0.00 sec)
+
+mysql> source insertData.sql
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.08 sec)
+
+ERROR 1045 (28000): Access denied for user 'sagalasan'@'%' (using password: YES)
+mysql> source insertData.sql
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.08 sec)
+
+ERROR 1045 (28000): Access denied for user 'sagalasan'@'%' (using password: YES)
+mysql> load data infile 'employees.csv'
+    -> into table p_employees
+    -> fields terminated by '|' enclosed by '"'
+    -> lines terminated by '\n'
+    -> ignore 1 rows;
+ERROR 1045 (28000): Access denied for user 'sagalasan'@'%' (using password: YES)
+mysql> source insertData.sql
+Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected (0.07 sec)
+
+ERROR 1148 (42000): The used command is not allowed with this MySQL version
+mysql> Ctrl-C -- exit!
+Aborted

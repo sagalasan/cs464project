@@ -1,0 +1,19 @@
+1. General Query 1 - This query simply selects only sell orders, effectively making a sell order table.
+
+2. General Query 2 - This query shows all transactions where orders had a quantity of greater than 800.
+
+3. General Query 3 - This query shows the number of transactions each employee has overseen.
+
+4. Join Query 1 - This query gives the item name, client name, and total order price of all transactions that had a total sale value of over $4000.
+
+5. Join Query 2 - This query gives the total sum of all money lost on inventory updates for each employee.  It is ordered by the least negative number.  This may be useful to see if an employee is excessively subtracting inventory.
+
+6. Union Query - This is a simple query that groups clients and employees and gives their addresses.  Useful for having all addresses in one place.
+
+7. Group by Query - This query shows the number of updates each employee has done.
+
+8. Order by Query - This query simply orders all the employee updates by date for so that you can view updates chronologically.
+
+9. Distinct Query - This query shows simply if an employee has ever completed an inventory update.
+
+10. Aggregate Query - This query shows the total number of sell orders for each client by useing the COUNT function.
